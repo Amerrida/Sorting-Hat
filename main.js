@@ -24,6 +24,7 @@ function clickedStart() {
              <button type="submit" class="border border-success" id='submitButt'>Sort</button>
         </form>`;       
         writeToDom('inputDiv', stringVar);
+        clickedSort();
     })
 }
 
@@ -36,22 +37,31 @@ function clickedSort() {
                 <div class="card-body ${cards[houseNum].background}">
                     <h2 class="card-title text-center">${nameInput.value}</h2>
                     <p class="card-text text-center">${cards[houseNum].house}</p>
-                    <a href="#" class= "btn btn-danger" expelButt">Expeled NOW!</a>
+                    <a href="#" class= "btn btn-danger expelButt">Expeled NOW!</a>
                 </div>
             </div>`;
             addToDom('cardDiv', stringVar);
+            activateDeletes();
         }
     })
 }
 
-function clickedExpel() {
-    document.getElementById('cardDiv').addEventListener('click', function() {
-        if(event.target.classList.contains('expelButt') === true) {
-            event.target.parentNode.parentNode.remove();
-        }
-    })
+const activateDeletes =() => {
+    const clickedExpel =document.getElementsByClassName('expelButt');
+    for (let i = 0; i < clickedExpel.length; i++){
+        const clickedExpelbtn = clickedExpel[i];
+        clickedExpelbtn.addEventListener("click", (e) => {
+           e.preventDefault(); 
+            const clickExpelbtn =  e.target;
+            const expel  = clickExpelbtn.parentNode.parentNode;
+            expel.remove();
+
+        })
+        
+    }
 }
 
 clickedStart();
-clickedSort();
-clickedExpel();
+
+
+
