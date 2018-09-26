@@ -2,10 +2,10 @@
 
 
 This is the Sorting Hats Project. Type in your name and then get expelled!! 
-
+This project have us much practice on event listeners. 
 
 ## Screenshots
-![main screenshot]
+![main screenshot](images/SortingHats.png)
 
 ## How to run this project
 
@@ -22,5 +22,5 @@ hs  -p 9999
 ```
 * Open Chrome and navaigate to: 
 ```
-localhost: http://127.0.0.1:8082
+localhost: http://127.0.0.1:8080/
 ```
